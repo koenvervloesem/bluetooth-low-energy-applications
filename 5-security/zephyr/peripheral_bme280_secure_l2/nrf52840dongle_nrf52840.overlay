@@ -1,0 +1,22 @@
+/*
+ * Copyright (c) 2021 Koen Vervloesem <koen@vervloesem.eu>
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+/*
+ * Configuration of a BME280 device on an I2C bus.
+ *
+ * Device address 0x76 is assumed. Your device may have a different
+ * address; check your device documentation if unsure.
+ */
+&i2c0 {
+    status = "okay";
+    sda-pin = <31>;
+    scl-pin = <29>;
+    bme280@76 {
+        compatible = "bosch,bme280";
+        reg = <0x76>;
+        label = "BME280_I2C";
+    };
+};
