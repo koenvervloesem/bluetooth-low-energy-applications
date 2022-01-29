@@ -1,7 +1,7 @@
 #include "NimBLEBeacon.h"
 #include "NimBLEDevice.h"
 
-#define ENDIAN_CHANGE_U16(x) ((((x)&0xFF00) >> 8) + (((x)&0xFF) << 8))
+#define ENDIAN_CHANGE_U16(x) ((((x)&0xff00) >> 8) + (((x)&0xff) << 8))
 
 NimBLEScan *pBLEScan;
 
@@ -13,7 +13,7 @@ class MyAdvertisedDeviceCallbacks
           advertisedDevice->getManufacturerData();
 
       if (strManufacturerData.length() == 25 &&
-          strManufacturerData[0] == 0x4C &&
+          strManufacturerData[0] == 0x4c &&
           strManufacturerData[1] == 0x00 &&
           strManufacturerData[2] == 0x02 &&
           strManufacturerData[3] == 0x15) {

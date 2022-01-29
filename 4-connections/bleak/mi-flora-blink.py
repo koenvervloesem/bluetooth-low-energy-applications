@@ -10,7 +10,7 @@ import sys
 import bleak
 
 DEVICE_MODE_CHANGE_UUID = "00001a00-0000-1000-8000-00805f9b34fb"
-BLINK_COMMAND = bytes([0xFD, 0xFF])
+BLINK_COMMAND = bytes([0xfd, 0xff])
 
 
 async def main(address):
