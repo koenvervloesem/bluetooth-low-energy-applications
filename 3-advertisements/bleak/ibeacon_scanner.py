@@ -28,7 +28,7 @@ def device_found(
 ):
     """Decode iBeacon."""
     try:
-        apple_data = advertisement_data.manufacturer_data[0x004c]
+        apple_data = advertisement_data.manufacturer_data[0x004C]
         ibeacon = ibeacon_format.parse(apple_data)
         uuid = UUID(bytes=bytes(ibeacon.uuid))
         print(f"UUID     : {uuid}")

@@ -25,7 +25,7 @@ def device_found(
 ):
     """Decode BME280 sensor values from advertisement data."""
     try:
-        data = advertisement_data.manufacturer_data[0xffff]
+        data = advertisement_data.manufacturer_data[0xFFFF]
         sensor_data = bme280_format.parse(data)
         print(f"Device     : {device.name}")
         print(f"Temperature: {sensor_data.temperature / 100} °C")

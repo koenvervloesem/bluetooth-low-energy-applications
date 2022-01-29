@@ -16,7 +16,7 @@ COMMAND1 = bytes(
     [
         0x77,
         0x61,
-        0x6e,
+        0x6E,
         0x67,
         0x00,
         0x00,
