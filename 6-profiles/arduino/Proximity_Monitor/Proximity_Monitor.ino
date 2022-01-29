@@ -13,7 +13,7 @@
 #include <NimBLEDevice.h>
 
 #define UUID_LINK_LOSS_SERVICE "1803"
-#define UUID_ALERT_LEVEL_CHARACTERISTIC "2A06"
+#define UUID_ALERT_LEVEL_CHARACTERISTIC "2a06"
 
 static NimBLEAdvertisedDevice *advDevice;
 NimBLERemoteService *pSvc = nullptr;

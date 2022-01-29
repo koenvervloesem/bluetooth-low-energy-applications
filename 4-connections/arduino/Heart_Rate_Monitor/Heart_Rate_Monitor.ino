@@ -8,8 +8,8 @@
  */
 #include <NimBLEDevice.h>
 
-#define UUID_SERVICE "180D"
-#define UUID_CHARACTERISTIC "2A37"
+#define UUID_SERVICE "180d"
+#define UUID_CHARACTERISTIC "2a37"
 
 static NimBLEAdvertisedDevice *advDevice;
 
