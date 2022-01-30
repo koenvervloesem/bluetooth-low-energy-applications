@@ -1,0 +1,23 @@
+---
+name: Build
+
+on: [push, pull_request]
+
+jobs:
+  python:
+    runs-on: ubuntu-20.04
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: [3.7, 3.8, 3.9, "3.10"]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2.4.0
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2.3.1
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install requirements
+        run: pip3 install bleak construct Pillow
+      - name: Check code
+        run: ./scripts/check_python.sh
