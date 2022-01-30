@@ -1,5 +1,5 @@
 ---
-name: Build
+name: Check
 
 on: [push, pull_request]
 
@@ -18,6 +18,6 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - name: Install requirements
-        run: pip3 install bleak construct Pillow
+        run: pip3 install black bleak construct flake8 isort Pillow pylint
       - name: Check code
         run: ./scripts/check_python.sh
