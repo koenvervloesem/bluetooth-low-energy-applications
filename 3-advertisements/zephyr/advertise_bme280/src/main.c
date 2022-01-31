@@ -1,5 +1,5 @@
 /*
- * Advertise BME280 sensor data in BLE manufacturer-specific data
+ * Advertise BME280 sensor data in BLE manufacturer-specific data.
  *
  * Copyright (c) 2021 Koen Vervloesem
  *

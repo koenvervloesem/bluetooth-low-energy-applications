@@ -42,8 +42,8 @@ def device_found(
         pass
 
 
-async def scan():
-    """Scan for devices"""
+async def main():
+    """Register detection callback and scan for devices."""
     scanner = BleakScanner()
     scanner.register_detection_callback(device_found)
 
@@ -53,4 +53,4 @@ async def scan():
         await scanner.stop()
 
 
-asyncio.run(scan())
+asyncio.run(main())

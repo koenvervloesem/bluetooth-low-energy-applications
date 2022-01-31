@@ -1,5 +1,5 @@
 /*
- * Indications for BME280 sensor data in a custom BLE service
+ * Indications for BME280 sensor data in a custom BLE service.
  *
  * Copyright (c) 2021 Koen Vervloesem
  *
@@ -40,7 +40,7 @@ static uint8_t char_value[6] = {0, 0, 0, 0, 0, 0};
 
 const struct device *bme280 = NULL;
 
-// Update data with BME280 sensor measurement
+// Update data with BME280 sensor measurement.
 // Returns 1 if at least one sensor measurement changed compared to
 // the previously stored value.
 uint8_t update_data_bme280(const struct device *dev) {

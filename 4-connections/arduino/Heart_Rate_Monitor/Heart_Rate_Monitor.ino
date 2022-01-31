@@ -1,10 +1,10 @@
-/* Monitor readings from a Bluetooth heart rate sensor
+/* Monitor readings from a BLE heart rate sensor.
  *
  * Copyright (C) 2021 Koen Vervloesem (koen@vervloesem.eu)
  *
  * SPDX-License-Identifier: MIT
  *
- * Based on the NimBLE_Client example from H2zero
+ * Based on the NimBLE_Client example from H2zero.
  */
 #include <NimBLEDevice.h>
 
@@ -50,7 +50,7 @@ class ClientCallbacks : public NimBLEClientCallbacks {
 };
 
 /* Define a class to handle the callbacks when advertisements are
- * received */
+ * received. */
 class AdvertisedDeviceCallbacks
     : public NimBLEAdvertisedDeviceCallbacks {
   void onResult(NimBLEAdvertisedDevice *advertisedDevice) {
@@ -59,11 +59,11 @@ class AdvertisedDeviceCallbacks
     if (advertisedDevice->isAdvertisingService(
             NimBLEUUID(UUID_SERVICE))) {
       Serial.println("Found Our Service");
-      // Stop scan before connecting
+      // Stop scan before connecting.
       NimBLEDevice::getScan()->stop();
-      // Save the device reference in a global for the client to use
+      // Save the device reference in a global for the client to use.
       advDevice = advertisedDevice;
-      // Ready to connect now
+      // Ready to connect now.
       doConnect = true;
     }
   }
@@ -82,17 +82,17 @@ void notifyCB(NimBLERemoteCharacteristic *pRemoteCharacteristic,
 }
 
 /* Create a single global instance of the callback class to be used by
- * all clients
+ * all clients.
  */
 static ClientCallbacks clientCB;
 
 /* Handles the provisioning of clients and connects / interfaces with
- * the server
+ * the server.
  */
 bool connectToServer() {
   NimBLEClient *pClient = nullptr;
 
-  // Check if we have a client we should reuse first
+  // Check if we have a client we should reuse first.
   if (NimBLEDevice::getClientListSize()) {
     /* Special case when we already know this device, we send false as
      * the second argument in connect() to prevent refreshing the
@@ -133,7 +133,7 @@ bool connectToServer() {
 
     if (!pClient->connect(advDevice)) {
       /* Created a client but failed to connect, don't need to keep it
-       * as it has no data
+       * as it has no data.
        */
       NimBLEDevice::deleteClient(pClient);
       Serial.println("Failed to connect, deleted client");
@@ -153,27 +153,27 @@ bool connectToServer() {
   Serial.print("RSSI: ");
   Serial.println(pClient->getRssi());
 
-  /* Now we can read/write/subscribe the charateristics of the
-   * services we are interested in
+  /* Now we can read/write/subscribe the characteristics of the
+   * services we are interested in.
    */
   NimBLERemoteService *pSvc = nullptr;
   NimBLERemoteCharacteristic *pChr = nullptr;
 
   pSvc = pClient->getService(UUID_SERVICE);
-  if (pSvc) { // Make sure it's not null
+  if (pSvc) { // Make sure it's not null.
     pChr = pSvc->getCharacteristic(UUID_CHARACTERISTIC);
   }
 
-  if (pChr) { // Make sure it's not null
+  if (pChr) { // Make sure it's not null.
     if (pChr->canNotify()) {
       if (!pChr->subscribe(true, notifyCB)) {
-        // Disconnect if subscribe failed
+        // Disconnect if subscribe failed.
         pClient->disconnect();
         return false;
       }
     } else if (pChr->canIndicate()) {
       if (!pChr->subscribe(false, notifyCB)) {
-        // Disconnect if subscribe failed
+        // Disconnect if subscribe failed.
         pClient->disconnect();
         return false;
       }
@@ -204,14 +204,14 @@ void setup() {
 }
 
 void loop() {
-  // Loop here until we find a device we want to connect to
+  // Loop here until we find a device we want to connect to.
   while (!doConnect) {
     delay(1);
   }
 
   doConnect = false;
 
-  // Found a device we want to connect to, do it now
+  // Found a device we want to connect to, do it now.
   if (connectToServer()) {
     Serial.println("Success, scanning for more...");
   } else {

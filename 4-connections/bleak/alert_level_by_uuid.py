@@ -1,5 +1,8 @@
 """Read the Alert Level characteristic of a BLE device by its UUID.
 
+Note: This doesn't work if the device has multiple Alert Level
+characteristics.
+
 Copyright (c) 2022 Koen Vervloesem
 
 SPDX-License-Identifier: MIT

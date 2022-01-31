@@ -30,9 +30,9 @@ def device_found(
         en = exposure_notification_format.parse(
             exposure_notification_data
         )
-        print(f"Address:                        {device.address}")
+        print(f"Address                       : {device.address}")
         print(
-            f"Rolling Proximity Identifier:   0x{bytes(en.rpi).hex()}"
+            f"Rolling Proximity Identifier  : 0x{bytes(en.rpi).hex()}"
         )
         print(
             f"Associated Encryption Metadata: 0x{bytes(en.aem).hex()}"

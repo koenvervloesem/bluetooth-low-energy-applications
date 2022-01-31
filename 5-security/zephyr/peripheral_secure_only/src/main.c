@@ -1,3 +1,13 @@
+/*
+ * Example of a custom BLE service using Secure Connections Only Mode.
+ *
+ * Copyright (c) 2021 Koen Vervloesem
+ *
+ * SPDX-License-Identifier: MIT
+ *
+ * Based on an example of the Bluetooth LE Security Guide.
+ */
+
 #include <device.h>
 #include <drivers/gpio.h>
 #include <errno.h>

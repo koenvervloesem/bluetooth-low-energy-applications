@@ -1,3 +1,10 @@
+/** Scan for Microsoft advertising beacons.
+ *
+ * Copyright (c) 2021 Koen Vervloesem
+ *
+ * SPDX-License-Identifier: MIT
+ *
+ */
 #include "NimBLEDevice.h"
 
 NimBLEScan *pBLEScan;
@@ -54,7 +61,7 @@ class MyAdvertisedDeviceCallbacks
         }
         Serial.println();
         Serial.println(
-            "-----------------------------------------------");
+            "---------------------------------------------");
       }
     }
   }

@@ -1,5 +1,5 @@
 /*
- * Read BME280 sensor data
+ * Read BME280 sensor data.
  *
  * Copyright (c) 2021 Koen Vervloesem
  *

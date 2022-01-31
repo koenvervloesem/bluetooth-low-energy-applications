@@ -1,5 +1,5 @@
 /* Minimal implementation of the Proximity Monitor role of the
- * Proximity Profile
+ * Proximity Profile.
  *
  * This implementation supports the Link Loss service of a Proximity
  * Reporter.

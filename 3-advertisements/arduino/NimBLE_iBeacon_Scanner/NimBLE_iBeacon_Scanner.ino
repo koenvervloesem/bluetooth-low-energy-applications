@@ -1,3 +1,12 @@
+/** Scan for iBeacon advertisements.
+ *
+ * Copyright (c) 2021 Koen Vervloesem
+ *
+ * SPDX-License-Identifier: MIT
+ *
+ * Based on h2zero's example BLE_Beacon_Scanner.ino.
+ *
+ */
 #include "NimBLEBeacon.h"
 #include "NimBLEDevice.h"
 

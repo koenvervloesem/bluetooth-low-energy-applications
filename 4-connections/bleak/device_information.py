@@ -1,4 +1,4 @@
-"""Show device information for a BLE device
+"""Show device information for a BLE device.
 
 Copyright (c) 2022 Koen Vervloesem
 

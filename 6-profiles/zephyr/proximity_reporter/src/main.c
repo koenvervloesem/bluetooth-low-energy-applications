@@ -1,5 +1,5 @@
 /*
- * Minimal Proximity Reporter implementing the Link Loss service
+ * Minimal Proximity Reporter implementing the Link Loss service.
  *
  * Copyright (c) 2021 Koen Vervloesem
  *

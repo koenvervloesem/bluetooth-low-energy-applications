@@ -1,4 +1,4 @@
-"""Service explorer for BLE devices
+"""Service explorer for BLE devices.
 
 Copyright (c) 2022 Koen Vervloesem
 
@@ -11,7 +11,7 @@ from bleak import BleakClient
 
 
 async def main(address):
-    """Scan for devices and show their services."""
+    """Connect to a BLE device and show its services."""
     async with BleakClient(address) as client:
         for service in client.services:
             print(f"- Description: {service.description}")

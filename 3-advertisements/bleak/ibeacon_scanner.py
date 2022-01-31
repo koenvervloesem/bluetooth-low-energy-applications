@@ -1,4 +1,4 @@
-"""Scan for iBeacons
+"""Scan for iBeacons.
 
 Copyright (c) 2022 Koen Vervloesem
 

@@ -1,6 +1,6 @@
 /*
  * Indications for BME280 sensor data in a custom BLE service,
- * using Security Mode 1 Level 2
+ * using Security Mode 1 Level 2.
  *
  * Copyright (c) 2021 Koen Vervloesem
  *
