@@ -21,3 +21,14 @@ jobs:
         run: pip3 install black bleak construct flake8 isort Pillow pylint
       - name: Check code
         run: ./scripts/check_python.sh
+  c:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2.4.0
+      - name: Install requirements
+        run: |
+          sudo apt update
+          sudo apt install clang-format
+      - name: Check code
+        run: ./scripts/check_c.sh
