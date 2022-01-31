@@ -22,3 +22,17 @@ jobs:
         run: arduino-cli lib install NimBLE-Arduino
       - name: Build Arduino sketches
         run: ./scripts/build_arduino.sh
+  zephyr:
+    runs-on: ubuntu-20.04
+    container: zephyrprojectrtos/ci:latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2.4.0
+      - name: Initialize Zephyr
+        run: |
+          pip3 install -U west
+          west init -l .
+          west update
+          pip3 install -r ../zephyr/scripts/requirements-base.txt
+      - name: Build Zephyr applications
+        run: ./scripts/build_zephyr.sh
