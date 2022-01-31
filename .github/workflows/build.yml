@@ -1,0 +1,24 @@
+---
+name: Build
+
+on: [push, pull_request]
+
+jobs:
+  arduino:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2.4.0
+      - name: Setup Arduino CLI
+        uses: arduino/setup-arduino-cli@v1.1.1
+      #- name: Initialize Arduino CLI configuration
+      #  run: arduino-cli config init
+      - name: Install ESP32 Arduino core
+        run: |
+          arduino-cli config add board_manager.additional_urls https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
+          arduino-cli core update-index
+          arduino-cli core install esp32:esp32
+      - name: Install libraries
+        run: arduino-cli lib install NimBLE-Arduino
+      - name: Build Arduino sketches
+        run: ./scripts/check_c.sh
