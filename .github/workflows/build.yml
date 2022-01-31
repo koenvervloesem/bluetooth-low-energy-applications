@@ -28,15 +28,14 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2.4.0
-        with:
-          path: zephyrproject
       - name: Initialize Zephyr environment
         working-directory: zephyrproject
         run: |
           pip3 install -U west
-          west init -l .
+          west init zephyrproject
+          cd zephyrproject
           west update
-          pip3 install -r ../zephyr/scripts/requirements-base.txt
+          pip3 install -r zephyr/scripts/requirements-base.txt
       - name: Build Zephyr applications
-        working-directory: zephyrproject
-        run: ../scripts/build_zephyr.sh ..
+        working-directory: zephyrproject/zephyr
+        run: ../../scripts/build_zephyr.sh ../..
