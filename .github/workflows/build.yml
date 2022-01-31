@@ -11,8 +11,8 @@ jobs:
         uses: actions/checkout@v2.4.0
       - name: Setup Arduino CLI
         uses: arduino/setup-arduino-cli@v1.1.1
-      #- name: Initialize Arduino CLI configuration
-      #  run: arduino-cli config init
+      - name: Initialize Arduino CLI configuration
+        run: arduino-cli config init
       - name: Install ESP32 Arduino core
         run: |
           arduino-cli config add board_manager.additional_urls https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
