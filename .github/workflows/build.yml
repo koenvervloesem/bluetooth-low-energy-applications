@@ -21,4 +21,4 @@ jobs:
       - name: Install libraries
         run: arduino-cli lib install NimBLE-Arduino
       - name: Build Arduino sketches
-        run: ./scripts/check_c.sh
+        run: ./scripts/build_arduino.sh
