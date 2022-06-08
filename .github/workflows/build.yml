@@ -28,6 +28,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2.4.0
+      - name: Allow repo access (see https://github.com/actions/checkout/issues/760)
+        run: |
+          git config --global --add safe.directory /__w/bluetooth-low-energy-applications/bluetooth-low-energy-applications
       - name: Initialize Zephyr environment
         run: |
           pip3 install -U west
