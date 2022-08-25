@@ -9,3 +9,9 @@ Chapter 3: Broadcasting data with advertisements
 ************************************************
 
 * page 53: Bleak 0.15.0 has added support for passive scanning in the BlueZ backend. So now you can also use the ``scanner = BleakScanner(scanning_mode="passive")`` example in your Python code on Linux if you want your scanner to just listen to advertising packets without sending a ``SCAN_REQ`` packet. This requires BlueZ >= 5.56 and Linux kernel >= 5.10. Note that Bleak still doesn't support passive scanning on macOS.
+
+******************************************
+Chapter 7: Reverse engineering BLE devices
+******************************************
+
+* page 229: The sentence "Fill a pixel for each LED o that you want to light up on the display." should be "Fill a pixel for each LED that you want to light up on the display."
