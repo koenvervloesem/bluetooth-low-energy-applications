@@ -8,7 +8,7 @@ These are corrections of errors found in the book `Develop your own Bluetooth Lo
 Everywhere
 **********
 
-* In Zephyr 3.1.0 all includes have been moved to the new prefix ``<zephyr/...>``. For instance, a line ``#include <bluetooth/bluetooth.h>`` in the book's Zephyr code should now be ``#include <zephyr/bluetooth/bluetooth.h>``.
+* In Zephyr 3.1.0 all includes have been moved to the new prefix ``<zephyr/...>``. For instance, a line ``#include <bluetooth/bluetooth.h>`` in the book's Zephyr code should now be ``#include <zephyr/bluetooth/bluetooth.h>``. This is fixed in the code in this repository.
 
 ************************************************
 Chapter 3: Broadcasting data with advertisements

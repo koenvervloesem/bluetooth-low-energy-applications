@@ -6,10 +6,10 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include <device.h>
-#include <devicetree.h>
-#include <drivers/sensor.h>
-#include <sys/printk.h>
+#include <zephyr/device.h>
+#include <zephyr/devicetree.h>
+#include <zephyr/drivers/sensor.h>
+#include <zephyr/sys/printk.h>
 #include <zephyr/types.h>
 
 /*
