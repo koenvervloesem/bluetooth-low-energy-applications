@@ -25,6 +25,8 @@ jobs:
   zephyr:
     runs-on: ubuntu-20.04
     container: zephyrprojectrtos/ci:latest
+    env:
+      CMAKE_PREFIX_PATH: /opt/toolchains
     steps:
       - name: Allow repo access (see https://github.com/actions/checkout/issues/760)
         run: |
@@ -39,11 +41,6 @@ jobs:
           west update
           west zephyr-export
           pip3 install -r zephyr/scripts/requirements-base.txt
-      - name: Install Zephyr toolchain
-        run: |
-          wget https://github.com/zephyrproject-rtos/sdk-ng/releases/download/v0.13.2/zephyr-sdk-0.13.2-linux-x86_64-setup.run
-          chmod +x zephyr-sdk-0.13.2-linux-x86_64-setup.run
-          ./zephyr-sdk-0.13.2-linux-x86_64-setup.run -- -d ~/zephyr-sdk-0.13.2
       - name: Build Zephyr applications
         working-directory: zephyrproject/zephyr
         run: ../../scripts/build_zephyr.sh ../..
