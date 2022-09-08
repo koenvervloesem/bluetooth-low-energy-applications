@@ -18,6 +18,8 @@ Chapter 3: Broadcasting data with advertisements
 * page 74: The calculation "200 256 = 56 dBm" should be "200 - 256 = -56 dBm".
 * page 77: The sentence beginning with "if you look up its definition" should start with a capital letter: "If you look up its definition".
 * page 78: The sentence "The ``BT_LE_ADV_PARAM`` macro is another helper macro:" shouldn't be in the code block, but on a normal line, referring to the rest of the code block.
+* page 82: Connect pin 0.26 of the nRF52840 Dongle to SDA and 0.27 to SCL.
+* page 84: Remove the definitions ``sda-pin``, ``scl-pin``, and ``label`` from the devicetree overlay. The nRF52840 Dongle's devicetree has already defined an I²C bus with SDA pin 0.26 and SCL pin 0.27. The same holds for the nRF52840 Development Kit's devicetree overlay. This is fixed in the code in this repository. The sentences "This overlay defines a BME280 sensor on the I²C bus with SDA pin 31 and SCL pin 29, with address 0x76. So, with this overlay, you can use the BME280 sensor connected to pins 0.31 (SDA) and 0.29 (SCL)." should read "This overlay defines a BME280 sensor on the I²C bus 0, which by default assigns SDA to pin 0.26 and SCL to pin 0.27, with address 0x76. So, with this overlay, you can use the BME280 sensor connected to pins 0.26 (SDA) and 0.27 (SCL)."
 
 ******************************************
 Chapter 7: Reverse engineering BLE devices
