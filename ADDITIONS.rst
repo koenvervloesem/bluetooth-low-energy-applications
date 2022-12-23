@@ -8,7 +8,7 @@ These are some additional tips and references to interesting projects not mentio
 Everywhere
 **********
 
-* `bluetooth-numbers <https://github.com/koenvervloesem/bluetooth-numbers>`_: I created this Python package with a wide setof numbers related to Bluetooth, so Python projects can easily use these numbers. The goal of this project is to provide a shared resource so various Python projects that deal with Bluetooth don't have to replicate this effort by rolling their own database and keeping it updated.
+* `bluetooth-numbers <https://github.com/koenvervloesem/bluetooth-numbers>`_: I created this Python package with a wide set of numbers related to Bluetooth, so Python projects can easily use these numbers. The goal of this project is to provide a shared resource so various Python projects that deal with Bluetooth don't have to replicate this effort by rolling their own database and keeping it updated.
 
 ************************************************
 Chapter 3: Broadcasting data with advertisements
