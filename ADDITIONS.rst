@@ -15,3 +15,9 @@ Chapter 3: Broadcasting data with advertisements
 ************************************************
 
 * `HumBLE Explorer <https://github.com/koenvervloesem/humble-explorer>`_: I created this Python project as a cross-platform, command-line and human-friendly Bluetooth Low Energy scanner. It's based on Bleak and the TUI framework Textual.
+
+***********************************
+Chapter 4: Connections and services
+***********************************
+
+* `Bluetooth Clocks <https://github.com/koenvervloesem/bluetooth-clocks>`_: I created this command-line program in Python to set and get the time on various Bluetooth Low Energy clocks. It's based on Bleak and developed by reverse-engineering the connection between these clocks and their mobile apps.
