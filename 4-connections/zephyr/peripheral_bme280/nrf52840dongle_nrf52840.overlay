@@ -10,6 +10,23 @@
  * Device address 0x76 is assumed. Your device may have a different
  * address; check your device documentation if unsure.
  */
+&pinctrl {
+        i2c0_default: i2c0_default {
+                group1 {
+                        psels = <NRF_PSEL(TWIM_SDA, 0, 31)>,
+                                <NRF_PSEL(TWIM_SCL, 0, 29)>;
+                };
+        };
+
+        i2c0_sleep: i2c0_sleep {
+                group1 {
+                        psels = <NRF_PSEL(TWIM_SDA, 0, 31)>,
+                                <NRF_PSEL(TWIM_SCL, 0, 29)>;
+                        low-power-enable;
+                };
+        };
+};
+
 &i2c0 {
     status = "okay";
     bme280@76 {
